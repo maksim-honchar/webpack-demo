@@ -14,9 +14,9 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './public/index.html'
+			template: './public/index.html',
 		}),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
 	],
 	output: {
 		filename: '[name].bundle.js',
