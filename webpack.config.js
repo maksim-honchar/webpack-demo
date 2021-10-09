@@ -1,19 +1,22 @@
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	mode: 'development',
 	entry: {
-		index: './src/index.ts',
+		index: './src/index.tsx',
 	},
 	devtool: 'inline-source-map',
 	devServer: {
 		static: './dist',
+		hot: true,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Development',
+			template: './public/index.html'
 		}),
+		new webpack.HotModuleReplacementPlugin()
 	],
 	output: {
 		filename: '[name].bundle.js',
